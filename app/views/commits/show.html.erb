@@ -1,0 +1,24 @@
+<h1>Listing commits</h1>
+
+<table>
+  <tr>
+    <th>Commit</th>
+    <th>Message</th>
+    <th>Committer</th>
+    <th>Committed date</th>
+    <th>Ticket</th>
+  </tr>
+
+<% @commits.each do |commit| %>
+  <tr>
+    <td><%= link_to commit.id, controller: "patches", action: "show", id: "#{commit.id}" %></td>
+    <td><%= commit.message %></td>
+    <td><%= commit.committer %></td>
+    <td><%= commit.committed_date %></td>
+    <td><%= commit.message.match(/[A-Z]+-\d+/).to_s %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,29 @@
+<%= form_for(@patch) do |f| %>
+  <% if @patch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patch.errors.count, "error") %> prohibited this patch from being saved:</h2>
+
+      <ul>
+      <% @patch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :a_path %><br />
+    <%= f.text_field :a_path %>
+  </div>
+  <div class="field">
+    <%= f.label :b_path %><br />
+    <%= f.text_field :b_path %>
+  </div>
+  <div class="field">
+    <%= f.label :diff %><br />
+    <%= f.text_field :diff %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<% @patches.each do |patch| %>
+<p>
+  <b>A path:</b>
+  <%= patch.a_path %>
+</p>
+
+<p>
+  <b>B path:</b>
+  <%= patch.b_path %>
+</p>
+
+<p>
+  <b>Diff:</b><br>
+  <% patch.diff.split("\n").each do |line| %>
+  <%= line %><br>
+  <% end %>
+</p>
+
+<% end %>
+
